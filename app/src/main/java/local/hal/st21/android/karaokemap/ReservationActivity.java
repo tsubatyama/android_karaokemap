@@ -15,26 +15,38 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
+import android.webkit.WebView;
+import android.webkit.WebViewClient;
+import android.widget.AdapterView;
 import android.widget.DatePicker;
 import android.widget.EditText;
+import android.widget.ListView;
+import android.widget.SimpleAdapter;
 import android.widget.TextView;
 import android.widget.TimePicker;
 import android.support.v4.app.FragmentManager;
 
+import org.json.JSONArray;
+import org.json.JSONException;
+import org.json.JSONObject;
+
+import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
+import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
 import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.Calendar;
+import java.util.HashMap;
+import java.util.Map;
 
 public class ReservationActivity extends AppCompatActivity  implements TimePickerFragment.TimePickerListener {
 
 
     public ProgressDialog _pDialog;
-    public String day = "";
     public String day2 = "";
     public String id = "";
     public String name = "";
@@ -42,6 +54,7 @@ public class ReservationActivity extends AppCompatActivity  implements TimePicke
     public String usetime;
 
     public static Context context;
+    private static final int REQUEST_CODE = 1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -78,73 +91,10 @@ public class ReservationActivity extends AppCompatActivity  implements TimePicke
         if(sDayOfMonth.length() == 1){
             sDayOfMonth = "0" + sDayOfMonth;
         }
-        day = sYear + "-" + sMonth + "-" + sDayOfMonth;
+        day2 = sYear + sMonth + sDayOfMonth;
 
     }
 
-
-    public void showDatePicker(View view) {
-        String strYear = day.substring(0, 4);
-        String strMonth = day.substring(5, 7);
-        String strDayOfMonth = day.substring(8, 10);
-        int nowYear = Integer.parseInt(strYear);
-        int nowMonth = Integer.parseInt(strMonth) - 1;
-        int nowDayOfMonth = Integer.parseInt(strDayOfMonth);
-
-        DatePickerDialog dialog = new DatePickerDialog(ReservationActivity.this, new DatePickerDialogDateSetListener(), nowYear, nowMonth, nowDayOfMonth);
-        dialog.show();
-
-    }
-    private class DatePickerDialogDateSetListener implements DatePickerDialog.OnDateSetListener {
-
-        @Override
-        public void onDateSet(DatePicker view, int year, int monthOfYear, int dayOfMonth){
-            monthOfYear = monthOfYear + 1;
-            String strmonth = String.valueOf(monthOfYear);
-            String strdate = String.valueOf(dayOfMonth);
-            if(strmonth.length() == 1){
-                strmonth = "0" + strmonth;
-            }
-            if(strdate.length() == 1){
-                strdate = "0" + strdate;
-            }
-
-            String msg = year + "年" + strmonth + "月" + strdate + "日";
-
-            day = year + "-" + strmonth + "-" + strdate;
-            day2 = year + strmonth + strdate;
-
-            TextView tvDate = findViewById(R.id.tv_Date);
-            tvDate.setText(msg);
-        }
-    }
-
-    public void showTimePicker(View view) {
-        TimePickerDialog dialog = new TimePickerDialog(ReservationActivity.this, new TimePickerDialogTimeSetListener(), 0, 0, true);
-        dialog.show();
-    }
-
-    /**
-     * 時間選択ダイアログの完了ボタンが押されたときの処理が記述されたメンバクラス。
-     */
-    private class TimePickerDialogTimeSetListener implements TimePickerDialog.OnTimeSetListener {
-
-        @Override
-        public void onTimeSet(TimePicker view, int hourOfDay, int minute) {
-            String strhour = String.valueOf(hourOfDay);
-            String strminute = String.valueOf(minute);
-
-            if(strminute.length() == 1){
-                strminute = "0" + strminute;
-            }
-
-            arrivaltime = strhour + strminute;
-            String msg = strhour + "時" + strminute + "分";
-
-            TextView tvTime = findViewById(R.id.tv_edittime);
-            tvTime.setText(msg);
-        }
-    }
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
 
@@ -334,6 +284,28 @@ public class ReservationActivity extends AppCompatActivity  implements TimePicke
 
         @Override
         public void onPostExecute(String result) {
+        }
+    }
+    public void showTimePicker(View view) {
+        EditText etPeople = findViewById(R.id.et_people);
+        String stPeople = etPeople.getText().toString();
+
+        Intent intent = new Intent(ReservationActivity.this, TimeScheduleActivity.class);
+        intent.putExtra("day2",day2);
+        intent.putExtra("id",id);
+        intent.putExtra("name",name);
+        intent.putExtra("peoplenum",stPeople);
+        startActivityForResult(intent,REQUEST_CODE);
+    }
+    @Override
+    protected void onActivityResult(int requestCode, int resultCode, Intent data) {
+        if(resultCode == RESULT_OK){
+            TextView edit = findViewById(R.id.tv_edittime);
+            edit.setText(data.getStringExtra("display"));
+            day2 = data.getStringExtra("datadate");
+            arrivaltime = data.getStringExtra("datatime");
+        }else{
+            //その他
         }
     }
 }

@@ -36,21 +36,6 @@
         app:layout_constraintTop_toBottomOf="@+id/include" />
 
     <TextView
-        android:id="@+id/tv_Day"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginTop="32dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="来店日付"
-        android:textSize="17sp"
-        app:layout_constraintEnd_toStartOf="@+id/guideline"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_StoreName" />
-
-    <TextView
         android:id="@+id/tv_Arrivaltime"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
@@ -59,11 +44,11 @@
         android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="来店時刻"
+        android:text="来店日時"
         android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Day" />
+        app:layout_constraintTop_toBottomOf="@+id/tvNumberpeople" />
 
     <TextView
         android:id="@+id/tv_Usetime"
@@ -93,7 +78,7 @@
         android:textSize="17sp"
         app:layout_constraintEnd_toStartOf="@+id/guideline"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tv_Usetime" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_StoreName" />
 
     <TextView
         android:id="@+id/tv_Sei"
@@ -108,7 +93,7 @@
         android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tvNumberpeople" />
+        app:layout_constraintTop_toBottomOf="@+id/tv_Usetime" />
 
     <TextView
         android:id="@+id/tv_tel"
@@ -132,7 +117,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="電話番号"
@@ -147,7 +132,7 @@
         android:layout_height="wrap_content"
         android:layout_marginStart="8dp"
         android:layout_marginLeft="8dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="32dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
         android:text="メール"
@@ -228,36 +213,11 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="春山 春太郎"
+        android:text="春山 春子"
         android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_tel"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="@+id/guideline" />
-
-    <TextView
-        android:id="@+id/tv_Date"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginStart="8dp"
-        android:layout_marginLeft="8dp"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="日付を選択してください"
-        android:textSize="17sp"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_Day"
-        app:layout_constraintEnd_toStartOf="@+id/button"
-        app:layout_constraintStart_toStartOf="@+id/guideline" />
-
-    <Button
-        android:id="@+id/button"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginEnd="8dp"
-        android:layout_marginRight="8dp"
-        android:text="日付選択"
-        android:onClick="showDatePicker"
-        app:layout_constraintBaseline_toBaselineOf="@+id/tv_Day"
-        app:layout_constraintEnd_toEndOf="parent" />
 
     <Button
         android:id="@+id/button2"
@@ -265,8 +225,8 @@
         android:layout_height="wrap_content"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="時刻選択"
         android:onClick="showTimePicker"
+        android:text="日時選択"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_Arrivaltime"
         app:layout_constraintEnd_toEndOf="parent" />
 
@@ -278,7 +238,7 @@
         android:layout_marginLeft="8dp"
         android:layout_marginEnd="8dp"
         android:layout_marginRight="8dp"
-        android:text="時刻を選択してください"
+        android:text="日時を選択してください"
         android:textSize="17sp"
         app:layout_constraintBaseline_toBaselineOf="@+id/tv_Arrivaltime"
         app:layout_constraintEnd_toStartOf="@+id/button2"

@@ -2,12 +2,10 @@ package local.hal.st21.android.karaokemap;
 
 import android.Manifest;
 import android.app.ProgressDialog;
-import android.content.Context;
 import android.content.Intent;
 import android.content.SharedPreferences;
 import android.content.pm.PackageManager;
 import android.graphics.Bitmap;
-import android.graphics.BitmapFactory;
 import android.location.Location;
 import android.location.LocationManager;
 import android.os.AsyncTask;
@@ -16,7 +14,6 @@ import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.ActivityCompat;
-import android.support.v4.app.FragmentActivity;
 import android.os.Bundle;
 import android.support.v4.view.GravityCompat;
 import android.support.v4.widget.DrawerLayout;
@@ -33,17 +30,20 @@ import android.widget.LinearLayout;
 import android.widget.ListView;
 import android.widget.SimpleAdapter;
 import java.net.MalformedURLException;
-import android.widget.Spinner;
 import android.widget.TextView;
 import android.widget.Toast;
-import android.widget.ImageView;
 import android.graphics.drawable.BitmapDrawable;
+import android.view.Menu;
+import android.support.v7.widget.SearchView;
+import android.support.v4.view.MenuItemCompat;
+import android.view.MenuInflater;
+import android.location.Address;
+import android.location.Geocoder;
 
 import com.google.android.gms.maps.CameraUpdateFactory;
 import com.google.android.gms.maps.GoogleMap;
 import com.google.android.gms.maps.OnMapReadyCallback;
 import com.google.android.gms.maps.SupportMapFragment;
-import com.google.android.gms.maps.model.BitmapDescriptor;
 import com.google.android.gms.maps.model.BitmapDescriptorFactory;
 import com.google.android.gms.maps.model.CameraPosition;
 import com.google.android.gms.maps.model.LatLng;
@@ -54,31 +54,31 @@ import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
 
-import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStream;
-import java.io.InputStreamReader;
 import java.io.OutputStream;
 import java.net.HttpURLConnection;
-import java.net.MalformedURLException;
 import java.net.URL;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.Locale;
+
+
 
 public class StoreSearchMapsActivity extends AppCompatActivity implements NavigationView.OnNavigationItemSelectedListener, OnMapReadyCallback {
 
     private GoogleMap mMap;
     private ListView lvStoreList;    // 内容エリア
-    private FloatingActionButton fab;
     private LinearLayout linearLayoutArea;
     private ArrayList<Marker> markers;
     private Intent intent;
     private Double lat;
     private Double lng;
 
-    public ProgressDialog _pDialog;
+    private SearchView mSearchView;
+
 
     private Location location = null;
     private boolean isFirst = true;
@@ -92,6 +92,7 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_store_search_maps);
+
 
         // Obtain the SupportMapFragment and get notified when the map is ready to be used.
         SupportMapFragment mapFragment = (SupportMapFragment) getSupportFragmentManager()
@@ -116,8 +117,6 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
 
         // 内容エリアの結び付け
         lvStoreList = findViewById(R.id.lvStoreList);
-        // ボタンの結び付け
-        fab = findViewById(R.id.fabOpenList);
 
         linearLayoutArea = findViewById(R.id.llStoreMapMain);
 
@@ -141,6 +140,62 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
         }
 
     }
+
+
+    @Override
+    public boolean onCreateOptionsMenu(Menu menu) {
+        // Set Menu
+        MenuInflater inflater = getMenuInflater();
+        inflater.inflate(R.menu.search, menu);
+
+        MenuItem menuItem = menu.findItem(R.id.toolbar_menu_search);
+
+        mSearchView = (SearchView) MenuItemCompat.getActionView(menuItem);
+
+        // whether display Magnifying Glass Icon at first
+        mSearchView.setIconifiedByDefault(true);
+
+        // whether display Submit Button
+        mSearchView.setSubmitButtonEnabled(false);
+
+        mSearchView.setOnQueryTextListener(new SearchView.OnQueryTextListener() {
+            @Override
+            public boolean onQueryTextSubmit(String query) {
+                Geocoder gcoder = new Geocoder(StoreSearchMapsActivity.this, Locale.getDefault());
+                List<Address> lstAddr;
+                try {
+                    // 位置情報の取得
+                    lstAddr = gcoder.getFromLocationName(query, 1);
+                    if (lstAddr != null && lstAddr.size() > 0) {
+                        // 緯度/経度取得
+                        Address addr = lstAddr.get(0);
+                        double latitude = addr.getLatitude();
+                        double longitude = addr.getLongitude();
+
+                        LatLng mapLatLng = new LatLng(latitude, longitude);
+                        mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(mapLatLng,16));
+
+
+                        //非同期処理を開始する。
+                        StoreMapTaskReceiver receiver = new StoreMapTaskReceiver();
+                        //ここで渡した引数はLoginTaskReceiverクラスのdoInBackground(String... params)で受け取れる。
+                        receiver.execute(GetUrl.storeMapUrl, latitude + "", longitude + "");
+                    }
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+                return false;
+            }
+
+            @Override
+            public boolean onQueryTextChange(String newText) {
+                return false;
+            }
+        });
+
+        return super.onCreateOptionsMenu(menu);
+    }
+
 
     /**
      * レフトナビ以外をクリックした時の動き。
@@ -225,7 +280,7 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
 
         if (location != null) {
 //            LatLng latLng = new LatLng(location.getLatitude(), location.getLongitude());
-////            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
+//            mMap.addMarker(new MarkerOptions().position(latLng).title("Marker in Sydney"));
 //            mMap.moveCamera(CameraUpdateFactory.newLatLngZoom(latLng,14));
 
             //非同期処理を開始する。
@@ -266,45 +321,6 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
         }
     }
 
-    @Override
-    public void onWindowFocusChanged(boolean hasFocus) {
-        super.onWindowFocusChanged(hasFocus);
-
-        // 内容エリアの結び付け
-        lvStoreList = findViewById(R.id.lvStoreList);
-        // ボタンの結び付け
-        fab = findViewById(R.id.fabOpenList);
-
-        // ExpandするViewの元のサイズを保持
-        final int originalHeight = linearLayoutArea.getHeight() / 2;
-
-        // 展開ボタン押下時
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View v) {
-
-                if (lvStoreList.getHeight() > 0) {       // 内容エリアが開いている時
-
-                    // 内容エリアを閉じるアニメーション
-                    StoreSearchMapsAnimation closeAnimation = new StoreSearchMapsAnimation(lvStoreList, -originalHeight, originalHeight);
-                    closeAnimation.setDuration(DURATION);
-                    lvStoreList.startAnimation(closeAnimation);
-                    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) fab.getLayoutParams();
-                    params.bottomMargin = 190;
-                    fab.setLayoutParams(params);
-                } else {
-
-                    // 内容エリアが閉じている時、内容エリアを開くアニメーション
-                    StoreSearchMapsAnimation openAnimation = new StoreSearchMapsAnimation(lvStoreList, originalHeight, 0);
-                    openAnimation.setDuration(DURATION);    // アニメーションにかける時間(ミリ秒)
-                    lvStoreList.startAnimation(openAnimation);   // アニメーション開始
-                    ViewGroup.MarginLayoutParams params = (ViewGroup.MarginLayoutParams) fab.getLayoutParams();
-                    params.bottomMargin = originalHeight + 170;
-                    fab.setLayoutParams(params);
-                }
-            }
-        });
-    }
 
     /**
      * フローティングアクションボタンが押された時のイベント処理用メソッド.
@@ -352,25 +368,6 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
     private class StoreMapTaskReceiver extends AsyncTask<String, Void, String> {
 
         private static final String DEBUG_TAG = "RestAccess";
-
-        /**
-         * 通信開始前に実行されるメソッド。
-         *
-         * ここで、プログレスダイアログを生成しましょう。
-         */
-        @Override
-        protected void onPreExecute() {
-            super.onPreExecute();
-
-            // プログレスダイアログの生成。
-            _pDialog = new ProgressDialog(StoreSearchMapsActivity.this);
-            _pDialog.setMessage(getString(R.string.progress_message));  // メッセージを設定。
-
-            // プログレスダイアログの表示。
-            _pDialog.show();
-
-        }
-
         /**
          * 非同期に処理したい内容を記述するメソッド.
          * このメソッドは必ず実装する必要がある。
@@ -461,10 +458,6 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
                 JSONArray datas = rootJson.getJSONArray("postsList");
                 if(datas.length() == 0) {
                     Toast.makeText(StoreSearchMapsActivity.this, "この地域に指定された条件の店舗は在りません。", Toast.LENGTH_SHORT).show();
-                    // ロード画面を消す。
-                    if (_pDialog != null && _pDialog.isShowing()) {
-                        _pDialog.dismiss();
-                    }
                     return;
                 }
                 for(int i = 0; i < datas.length(); i++) {
@@ -633,11 +626,6 @@ public class StoreSearchMapsActivity extends AppCompatActivity implements Naviga
 
             mMap.setIndoorEnabled(false);
             mMap.getUiSettings().setTiltGesturesEnabled(false);
-
-            // ロード画面を消す。
-            if (_pDialog != null && _pDialog.isShowing()) {
-                _pDialog.dismiss();
-            }
         }
     }
 

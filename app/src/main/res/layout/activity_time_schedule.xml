@@ -1,0 +1,1781 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical">
+
+
+    <include
+            android:id="@+id/include"
+            layout="@layout/app_bar_main"
+            android:layout_width="match_parent"
+            android:layout_height="59dp" />
+
+    <TextView
+        android:id="@+id/tv_StoreName"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="店舗名"
+        android:textSize="28sp"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginRight="8dp"
+        />
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="8dp"
+        android:orientation="horizontal" >
+
+        <TextView
+            android:id="@+id/tv_YearMonth"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="2019年03月"
+            android:layout_weight="1"
+            android:layout_marginTop="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:onClick="showDatePicker"
+            android:text="日付選択" />
+    </LinearLayout>
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="50dp" >
+
+
+        <TableRow
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="#f0f8ff" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="日時"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="5(火)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="6(水)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="7(木)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="8(金)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="9(土)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="10(日)"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/date7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:text="11(月)"
+                android:textSize="15sp" />
+        </TableRow>
+    </TableLayout>
+
+<ScrollView
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <TableLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+
+        <!--9:00の行 -->
+        <TableRow
+            android:id="@+id/nine"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content">
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="09:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Nine1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nine7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ninehalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="09:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/NineHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/ten"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="10:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Ten1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Ten7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/tenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="10:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/eleven"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="11:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Eleven1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eleven7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/elevenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="11:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/ElevenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ElevenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twelve"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="12:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Twelve1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twelve7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twelvehalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="12:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TwelveHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwelveHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/thirteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="13:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Thirteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Thirteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/thirteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="60dp"
+                android:layout_height="50dp"
+                android:text="13:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/ThirteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/ThirteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="14:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Fourteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fourteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fourteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="14:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/FourteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FourteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fifteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="15:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Fifteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Fifteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/fifteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="15:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/FifteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/FifteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/sixteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="16:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Sixteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Sixteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/sixteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="16:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/SixteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SixteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/seventeen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="17:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Seventeen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Seventeen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/seventeenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="17:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/SeventeenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/SeventeenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/eightteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="18:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Eightteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Eightteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/eightteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="18:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/EightteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/EightteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nineteen"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="19:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Nineteen1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Nineteen7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/nineteenhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="19:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/NineteenHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/NineteenHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twenty"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="20:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Twenty1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twenty7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twentyhalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="20:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TwentyHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twentyone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="21:00"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/Twentyone1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/Twentyone7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+
+        <TableRow
+            android:id="@+id/twentyonehalf"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" >
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="50dp"
+                android:text="21:30"
+                android:paddingTop="15dp"
+                android:textSize="15sp"
+                android:gravity="center_horizontal"/>
+
+            <TextView
+                android:id="@+id/TwentyoneHalf1"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf2"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf3"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf4"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf5"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf6"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+            <TextView
+                android:id="@+id/TwentyoneHalf7"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:gravity="center_horizontal"
+                android:paddingTop="15dp"
+                android:textSize="15sp" />
+        </TableRow>
+    </TableLayout>
+</ScrollView>
+
+</LinearLayout>

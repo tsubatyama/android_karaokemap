@@ -25,7 +25,6 @@ public class ConfirmationDialogFragment  extends DialogFragment {
      * ダイアログのボタンが押されたときの処理が記述されたメンバクラス。
      */
     private class DialogButtonClickListener implements DialogInterface.OnClickListener {
-
         @Override
         public void onClick(DialogInterface dialog, int which) {
             Activity parent = getActivity();
@@ -40,6 +39,5 @@ public class ConfirmationDialogFragment  extends DialogFragment {
                     break;
             }
         }
-
     }
 }

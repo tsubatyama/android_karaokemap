@@ -1,21 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="local.hal.st21.android.karaokemap">
-
     <!-- ExifInterface使うための -->
     <uses-permission android:name="android.permission.READ_EXTERNAL_STORAGE" />
-    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
-
-    <!-- 位置情報取得のための -->
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" /> <!-- 位置情報取得のための -->
     <!-- 位置情報 GPSから -->
-    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
-    <!-- 位置情報 ネットワークから -->
-    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
-
-    <!-- カメラ起動のための -->
-    <uses-permission android:name="android.permission.CAMERA" />
-
-    <!-- ネットワークアクセス -->
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" /> <!-- 位置情報 ネットワークから -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" /> <!-- カメラ起動のための -->
+    <uses-permission android:name="android.permission.CAMERA" /> <!-- ネットワークアクセス -->
     <uses-permission android:name="android.permission.INTERNET" />
     <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
     <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
@@ -39,8 +31,9 @@
             android:name="com.google.android.geo.API_KEY"
             android:value="@string/google_maps_key" />
 
-        <activity android:name=".ReservationActivity"/>
+        <activity android:name=".ReservationActivity" />
         <activity android:name=".StoreDetailActivity" />
+        <activity android:name=".TimeScheduleActivity"></activity>
     </application>
 
 </manifest>

@@ -9,6 +9,7 @@ public class GetUrl {
 
     public static final String storeMapUrl = fixedUrl + "MapServlet";
     public static final String ReInsertUrl = fixedUrl + "ReInsertServlet";
+    public static final String TimeTableUrl = fixedUrl + "TimeScheduleServlet";
     public static final String photoUrl = fixedUrl + "ImageDisplay.jsp";
 }
 

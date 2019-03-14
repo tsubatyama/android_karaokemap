@@ -63,16 +63,6 @@
         </LinearLayout>
         <!-- ここまでにコンテンツを記述!! -->
 
-        <android.support.design.widget.FloatingActionButton
-            android:id="@+id/fabOpenList"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginBottom="70dp"
-            android:layout_marginRight="10dp"
-            android:onClick="onFabOpenListClick"
-            android:src="@drawable/ic_action_list"
-            app:layout_anchor="@id/lvStoreList"
-            app:layout_anchorGravity="top|right"/>
     </android.support.design.widget.CoordinatorLayout>
 
     <android.support.design.widget.NavigationView
